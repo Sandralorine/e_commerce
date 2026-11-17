@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page_acceuil</title>
+
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/theme.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+      .dropdown {
+       position: relative;
+       display: inline-block;
+   }
+   
+   .dropdown-menu {
+       display: none;
+       position: absolute;
+       background-color: #f9f9f9;
+       min-width: 160px;
+       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+       z-index: 1;
+   }
+   
+   .dropdown-menu .dropdown-item {
+       color: black;
+       padding: 12px 16px;
+       text-decoration: none;
+       display: block;
+   }
+   
+   .dropdown-menu .dropdown-item:hover {
+       background-color: #f1f1f1;
+   }
+   
+   .dropdown:hover .dropdown-menu {
+       display: block;
+   }
+   .loader {
+    display: none;
+    font-size: 1.2em;
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+}
+/* Styles pour la petite image à droite */
+.small-image {
+    width: 40px; /* Ajustez la taille selon vos besoins */
+    height: 40px; /* Ajustez la taille selon vos besoins */
+    margin: 0; /* Supprime les marges */
+    position: absolute;
+    top: 17%;
+    right: 20%;
+   
+    transform: translateY(-50%);
+}
+@media (max-width: 767.98px) {
+            .small-image {
+                width: 30px; /* Ajustez la taille pour les petits écrans */
+                height: 30px; /* Ajustez la taille pour les petits écrans */
+                top: 9%; /* Ajustez la position verticale pour les petits écrans */
+                right: 10%; /* Réinitialise la position horizontale */
+                left: 17%; /* Positionne l'image à gauche */
+                transform: translateY(0); /* Réinitialise la transformation verticale */
+            }
+        }
+:root {
+    --fc-primary-rgb: 0, 0, 250; /* Couleur bleue en RGB */
+    --fc-text-opacity: 1; /* Opacité complète */
+}
+
+.text-primary {
+    --fc-text-opacity: 1;
+    color: rgba(var(--fc-primary-rgb), var(--fc-text-opacity)) !important;
+}
+/* Styles pour les petits écrans */
+@media (max-width: 991.98px) {
+    .navbar-brand img {
+        height: 20px;
+        margin-top: 100%;
+    }
+
+    .navbar-toggler svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .offcanvas-body {
+        padding: 1rem;
+    }
+
+    .offcanvas-header {
+        padding: 1rem;
+    }
+
+    .offcanvas-header .btn-close {
+        margin-left: auto;
+    }
+
+    .offcanvas-body .input-group {
+        margin-bottom: 1rem;
+    }
+
+    .offcanvas-body .btn-outline-gray-400 {
+        width: 100%;
+    }
+
+    .offcanvas-body .dropdown-menu {
+        position: static;
+    }
+
+    .offcanvas-body .dropdown-menu .col-lg-3 {
+        margin-left: 0;
+    }
+
+    .offcanvas-body .dropdown-menu .card {
+        border: none;
+    }
+}
+   
+   </style>
+   
+ </head>
+<body>
+<header class="mb-0" >
+   <div class="row"  style="background-color: hwb(32 7% 3% / 0.952); text-align: center;">
+      <div class="col-12 mb-6" style="margin: 10px 0;">
+          <h3 class="mb-0">BIENVENU CHEZ LUXAMODE</h3>
+      </div>
+  </div>
+<div class="py-0" >
+   <div class="container-fluid ">
+      <div class="row w-100 align-items-center gx-lg-2 gx-0 col-md-9 col-7">
+         <div class="col-xxl-2 col-lg-3 col-md-6 col-5">
+            <a class="navbar-brand d-none d-lg-block" href="./index.html">
+               <img src="images/LOGO_LUXI.png" alt="eCommerce HTML Template" style="height:60px; float:left;" />
+            </a>
+            <div class="d-flex justify-content-between w-100 d-lg-none">
+               <a class="navbar-brand" href="./index.html">
+                  <img src="images/Luxy_M.png" alt="eCommerce HTML Template" />
+               </a>
+            </div>
+         </div>
+         <div class="col-xxl-5 col-lg-5 d-none d-lg-block">
+            <form action="#">
+               <div class="input-group"> 
+                  <input class="form-control rounded" type="search" placeholder="Search for products" />
+                  <span class="input-group-append">
+                     <button class="btn bg-white border border-start-0 ms-n10 rounded-0 rounded-end" type="button">
+                        <svg
+                           xmlns="http://www.w3.org/2000/svg"
+                           width="16"
+                           height="16"
+                           viewBox="0 0 24 24"
+                           fill="none"
+                           stroke="currentColor"
+                           stroke-width="2"
+                           stroke-linecap="round"
+                           stroke-linejoin="round"
+                           class="feather feather-search">
+                           <circle cx="11" cy="11" r="8"></circle>
+                           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                     </button>
+                  </span>
+               </div>
+            </form>
+         </div>
+         <div class="col-md-2 col-xxl-3 d-none d-lg-block">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-outline-gray-400 text-muted" data-bs-toggle="modal" data-bs-target="#locationModal">
+               <i class="feather-icon icon-map-pin me-2"></i>
+               Location
+            </button>
+         </div>
+         <div class="col-lg-2 col-xxl-2 text-end col-md-9 col-7">
+            <div class="list-inline">
+               <div class="list-inline-item me-5">
+                  <a href="./pages/shop-wishlist.html" class="text-muted position-relative">
+                     <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-heart">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                     </svg>
+                   
+                  </a>
+               </div>
+               <div class="list-inline-item me-5">
+                  <a href="#!" class="text-muted" data-bs-toggle="modal" data-bs-target="#userModal">
+                     <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-user">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                     </svg>
+                  </a>
+               </div>
+              
+               <div class="list-inline-item d-inline-block d-lg-none ">
+                  <!-- Button -->
+                  <button
+                     class="navbar-toggler collapsed"
+                     type="button"
+                     data-bs-toggle="offcanvas"
+                     data-bs-target="#navbar-default"
+                     aria-controls="navbar-default"
+                     aria-label="Toggle navigation">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-text-indent-left text-primary" viewBox="0 0 16 16">
+                        <path
+                           d="M2 3.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm.646 2.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L4.293 8 2.646 6.354a.5.5 0 0 1 0-.708zM7 6.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm-5 3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
+                     </svg>
+                  </button>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-2 col-xxl-2 text-end col-md-9 col-7">
+            <a href="panier.html"> <img src="images/Panier2.jpg" alt="Small Image" class="small-image"></a>
+         </div>
+      </div>
+   </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-light navbar-default py-0 pb-lg-4" aria-label="Offcanvas navbar large">
+   <div class="container-fluid">
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="navbar-default" aria-labelledby="navbar-defaultLabel">
+         <div class="offcanvas-header pb-1">
+            <a href="./index.html"><img src="images/LOGO_LUXI.png" alt="eCommerce HTML Template" /></a>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+         </div>
+         <div class="offcanvas-body">
+            <div class="d-block d-lg-none mb-4" >
+               <form action="#">
+                  <div class="input-group">
+                     <input class="form-control rounded" type="search" placeholder="Search for products" />
+                     <span class="input-group-append">
+                        <button class="btn bg-white border border-start-0 ms-n10 rounded-0 rounded-end" type="button">
+                           <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              class="feather feather-search">
+                              <circle cx="11" cy="11" r="8"></circle>
+                              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                           </svg>
+                        </button>
+                     </span>
+                  </div>
+               </form>
+               <div class="mt-2">
+                  <button type="button" class="btn btn-outline-gray-400 text-muted w-100" data-bs-toggle="modal" data-bs-target="#locationModal">
+                     <i class="feather-icon icon-map-pin me-2"></i>
+                     Pick Location
+                  </button>
+               </div>
+            </div>
+            <div class="d-block d-lg-none mb-4 d-none d-lg-block">
+               <a
+                  class="btn btn-primary w-100 d-flex justify-content-center align-items-center"
+                  data-bs-toggle="collapse"
+                  href="#collapseExample"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample">
+                  <span class="me-2">
+                     <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-grid">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                     </svg>
+                  </span>
+                  All Categories
+               </a>
+               <div class="collapse mt-2" id="collapseExample" >
+                  <div class="card card-body" >
+                     <ul class="mb-0 list-unstyled">
+                        <li><a class="dropdown-item" href="./pages/shop-grid.html">Vetements hommes</a></li>
+                        <li><a class="dropdown-item" href="./pages/shop-grid.html">Vetements femmes</a></li>
+                        <li><a class="dropdown-item" href="./pages/shop-grid.html">Vetements enfants</a></li>
+                        <li><a class="dropdown-item" href="./pages/shop-grid.html">bijoux</a></li>
+                        <li><a class="dropdown-item" href="./pages/shop-grid.html">accesoire</a></li>
+                      
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="dropdown me-3 d-none d-lg-block" >
+               <button class="btn btn-primary px-6" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="background-color:#4137d5;margin:10px;padding:5px;border-radius: 1Opx; height:35px;width:180px;">
+                  <span class="me-1">
+                     <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-grid">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                     </svg>
+                  </span>
+                  All categories
+               </button>
+               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="page_tous_produits.html">Tous les produits</a></li>
+                 
+               </ul>
+               
+            </div>
+          
+            <li class="nav-item dropdown w-lg-auto dropdown-fullwidth" style="list-style-type: none; padding: 15px;">
+               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Bijoux</a>
+               <div class="dropdown-menu pb-3 row g-3">
+                   <div class="d-flex justify-content-between my-2 py-1" style="gap: 10px;">
+                       <div class="col-lg-3 col-12 mb-4 mb-lg-0" style="margin-left: 20px;">
+                        <a class="dropdown-item" href="page_indisponible.html"><h6 class="text-primary ps-3">Bijoux en argent</h6></a>
+                           <a class="dropdown-item" href="page_indisponible.html">bracelet</a>
+                           <a class="dropdown-item" href="page_indisponible.html">boucle</a>
+                           <a class="dropdown-item" href="page_indisponible.html">chaine</a>
+                           <a class="dropdown-item" href="page_indisponible.html">bargue</a>
+                       </div>
+                       <div class="col-lg-3 col-12 mb-4 mb-lg-0">
+                        <a class="dropdown-item" href="page_indisponible.html"><h6 class="text-primary ps-3">Bijoux en or</h6></a>
+                           <a class="dropdown-item" href="page_indisponible.html">bracelet</a>
+                           <a class="dropdown-item" href="page_indisponible.html">boucle</a>
+                           <a class="dropdown-item" href="page_indisponible.html">Chaine</a>
+                           <a class="dropdown-item" href="page_indisponible.html">bargue</a>
+                       </div>
+                       <div class="col-lg-3 col-12 mb-4 mb-lg-0">
+                        <a class="dropdown-item" href="page_indisponible.html"><h6 class="text-primary ps-3">boite a bijoux</h6></a>
+                           <a class="dropdown-item" href="page_indisponible.html">boite en metal</a>
+                           <a class="dropdown-item" href="page_indisponible.html">boite en cuivre</a>
+                           <a class="dropdown-item" href="page_indisponible.html">boite en verre</a>
+                       </div>
+                      
+                       <div class="col-lg-3 col-12 mb-4 mb-lg-0">
+                        <div class="card border-0">
+                           <img src="images/bijoux_or.jpg" alt="eCommerce HTML Template" class="img-fluid" />
+                          
+                        </div>
+                     </div>
+                   </div>
+               </div>
+           </li>
+
+           
+            <li class="nav-item dropdown  w-lg-auto dropdown-fullwidth" style="list-style-type: none;padding:15px;">
+               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Accesoires </a>
+               <div class="dropdown-menu pb-3 row g-3">
+                  <div class="d-flex justify-content-between my-2 py-1" style="gap: 10px;">
+                     <div class="col-lg-3 col-12 mb-4 mb-lg-0" style="margin-left: 20px;">
+                        <a class="dropdown-item" href="page_indisponible.html"><h6 class="text-primary ps- 3">Montres</h6></a>
+                        <a class="dropdown-item" href="page_indisponible.html">Montre en cuivre</a>
+                        <a class="dropdown-item" href="page_indisponible.html">Montre en metal</a>
+                        <a class="dropdown-item" href="page_indisponible.html">Montre en fer</a>
+                        
+                       
+                     </div>
+                     <div class="col-lg-3 col-12 mb-4 mb-lg-0">
+                        <a class="dropdown-item" href="page_indisponible.html"><h6 class="text-primary ps-3">Sac</h6></a>
+                        <a class="dropdown-item" href="page_indisponible.html">sac en main</a>
+                        <a class="dropdown-item" href="page_indisponible.html">sac a dos</a>
+                        <a class="dropdown-item" href="page_indisponible.html">sac de bussiness</a>
+                       
+                     </div>
+                     <div class="col-lg-3 col-12 mb-4 mb-lg-0">
+                        <a class="dropdown-item" href="page_indisponible.html"><h6 class="text-primary ps-3">Chaussures</h6></a>
+                        <a class="dropdown-item" href="page_indisponible.html">paire</a>
+                        <a class="dropdown-item" href="page_indisponible.html">tennis</a>
+                        <a class="dropdown-item" href="page_indisponible.html">talon</a>
+                        <a class="dropdown-item" href="page_indisponible.html">barbouche</a>
+                      
+                     </div>
+                     <div class="col-lg-3 col-12 mb-4 mb-lg-0">
+                        <div class="card border-0">
+                           <img src="images/montres.jpg" alt="eCommerce HTML Template" class="img-fluid" />
+                          
+                        </div>
+                     </div>
+                    
+                  </div>
+               </div>
+            </li>
+            <li class="nav-item dropdown  w-lg-auto dropdown-fullwidth" style="list-style-type: none;padding:15px;">
+               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Vetements hommes</a>
+               <div class="dropdown-menu pb-3 row g-3">
+                  <div class="d-flex justify-content-between my-2 py-1" style="gap: 10px;">
+                     <div class="col-lg-3 col-12 mb-4 mb-lg-0" style="margin-left: 20px;">
+                        <a class="dropdown-item" href="page_pantalon.html"><h6 class="text-primary ps- 3">Pantalon + Ensemble</h6></a>
+                        <a class="dropdown-item" href="page_pantalon.html">Jean</a>
+                        <a class="dropdown-item" href="page_pantalon.html">Pantalon jogging</a>
+                        <a class="dropdown-item" href="page_pantalon.html">pantalon costume</a>
+                        <a class="dropdown-item" href="page_pantalon.html">Cargo</a>
+                        <a class="dropdown-item" href="page_pantalon.html">Veste</a>
+                        <a class="dropdown-item" href="page_pantalon.html">Ensemble tissu</a>
+                        <a class="dropdown-item" href="page_pantalon.html">Ensemble sport</a>
+                       
+                     </div>
+                     
+                     <div class="col-lg-3 col-12 mb-4 mb-lg-0">
+                        <a class="dropdown-item" href="page_indisponible.html"> <h6 class="text-primary ps-3">Pull over</h6></a>
+                        <a class="dropdown-item" href="page_indisponible.html">pull oversize</a>
+                        <a class="dropdown-item" href="page_indisponible.html">pull over a manche</a>
+                        <a class="dropdown-item" href="page_indisponible.html">pull over streetwear</a>
+                      
+                     </div>
+                     <div class="col-lg-3 col-12 mb-4 mb-lg-0">
+                        <a class="dropdown-item" href="page_indisponible.html"><h6 class="text-primary ps-3">Chemise</h6></a>
+                        <a class="dropdown-item" href="page_indisponible.html">chemise lin</a>
+                        <a class="dropdown-item" href="page_indisponible.html">chemise coton</a>
+                        <a class="dropdown-item" href="page_indisponible.html">chemise droitr</a>
+                      
+                     </div>
+                     <div class="col-lg-3 col-12 mb-4 mb-lg-0">
+                        <div class="card border-0">
+                           <img src="images/ensemble_homme.jpg" alt="eCommerce HTML Template" class="img-fluid" />
+                          
+                        </div>
+                     </div>
+                     
+                  </div>
+               </div>
+            </li>
+            
+              
+            <li class="nav-item dropdown W-100 w-lg-auto dropdown-fullwidth"style="list-style-type: none; padding:15px;">
+               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Vetements Femmes</a>
+               <div class="dropdown-menu pb-3 row g-3">
+                  <div class="d-flex justify-content-between my-2 py-1" style="gap: 10px;">
+                     <div class="col-lg-3 col-12 mb-4 mb-lg-0" style="margin-left: 20px;">
+                        <a class="dropdown-item" href="page_robe.html"><h6 class="text-primary ps- 3">Robes</h6></a>
+                        <a class="dropdown-item" href="page_robe.html">Robe evasé</a>
+                        <a class="dropdown-item" href="page_robe.html">Robe droite</a>
+                        <a class="dropdown-item" href="page_robe.html">Robe en tissu</a>
+                        <a class="dropdown-item" href="page_robe.html">robe en dentelle</a>
+                       
+                     </div>
+                     <div class="col-lg-3 col-12 mb-4 mb-lg-0">
+                        <a class="dropdown-item" href="page_ensemble_femme.html"><h6 class="text-primary ps-3">Ensemble + Pantalon</h6></a>
+                        <a class="dropdown-item" href="page_ensemble_femme.html">Ensemble tissu</a>
+                        <a class="dropdown-item" href="page_ensemble_femme.html">Ensemble pantalon</a>
+                        <a class="dropdown-item" href="page_ensemble_femme.html">Ensemble responsable</a>
+                        <a class="dropdown-item" href="page_ensemble_femme.html">pantalon responsable</a>
+                        <a class="dropdown-item" href="page_ensemble_femme.html">pantalon sim</a>
+                        <a class="dropdown-item" href="page_ensemble_femme.html">pantalon oversize</a>
+                      
+                     </div>
+                     
+                     <div class="col-lg-3 col-12 mb-4 mb-lg-0">
+                        <a class="dropdown-item" href="page_zero_produit.html"><h6 class="text-primary ps-3">Jupe</h6></a>
+                        <a class="dropdown-item" href="page_zero_produit.html">jupe longue</a>
+                        <a class="dropdown-item" href="page_zero_produit.html">jupe ouverte</a>
+                        <a class="dropdown-item" href="page_zero_produit.html">jupe fente</a>
+                      
+                     </div>
+                     <div class="col-lg-3 col-12 mb-4 mb-lg-0">
+                        <div class="card border-0">
+                           <img src="images/Ensemble_femme4.jpg" alt="eCommerce HTML Template" class="img-fluid" />
+                          
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </li>
+            <li class="nav-item dropdown W-100 w-lg-auto dropdown-fullwidth"style="list-style-type: none; padding:15px;">
+               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Vetements enfants</a>
+               <div class="dropdown-menu pb-3 row g-3">
+                  <div class="d-flex justify-content-between my-2 py-1" style="gap: 10px;">
+                     <div class="col-lg-3 col-12 mb-4 mb-lg-0" style="margin-left: 20px;">
+                        <a class="dropdown-item" href="page_indisponible.html"><h6 class="text-primary ps- 3">Ensemble</h6></a>
+                        <a class="dropdown-item" href="page_indisponible.html">Ensemble tissu</a>
+                        <a class="dropdown-item" href="page_indisponible.html">Ensemble jupe</a>
+                        <a class="dropdown-item" href="page_indisponible.html">Ensemble pantalon</a>
+                        <a class="dropdown-item" href="page_indisponible.html">Ensemble deguisement</a>
+                       
+                     </div>
+                     <div class="col-lg-3 col-12 mb-4 mb-lg-0" style="margin-left: 20px;">
+                        <a class="dropdown-item" href="page_indisponible.html"> <h6 class="text-primary ps- 3">Robes</h6></a>
+                        <a class="dropdown-item" href="page_indisponible.html">Robe en tissu</a>
+                        <a class="dropdown-item" href="page_indisponible.html">Robe princesse</a>
+                        <a class="dropdown-item" href="page_indisponible.html">Robe feé</a>
+                       
+                       
+                     </div>
+                     
+                     <div class="col-lg-3 col-12 mb-4 mb-lg-0" style="margin-left: 20px;">
+                        <a class="dropdown-item" href="page_indisponible.html"> <h6 class="text-primary ps- 3">Bas+Pull</h6></a>
+                        <a class="dropdown-item" href="page_indisponible.html">haut</a>
+                        <a class="dropdown-item" href="page_indisponible.html">collant</a>
+                        <a class="dropdown-item" href="page_indisponible.html">jupe</a>
+                        <a class="dropdown-item" href="page_indisponible.html">pull a capusche</a>
+                        <a class="dropdown-item" href="page_indisponible.html">pull a manche</a>
+                     </div>
+                     <div class="col-lg-3 col-12 mb-4 mb-lg-0">
+                        <div class="card border-0">
+                           <img src="images/ensemble_enfants.jpg" alt="eCommerce HTML Template" class="img-fluid" />
+                          
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </li>
+   </header>
+     
+ <style>
+   .card-product {
+       border: 1px solid  black; /* Bordure transparente par défaut */
+       transition: border-color 0.3s ease; /* Transition douce pour la couleur de la bordure */
+   }
+
+   .card-product:focus,
+   .card-product:hover {
+       border-color:  hwb(32 7% 3% / 0.952); /* Bordure orange au focus ou au survol */
+       outline: none; /* Désactive les bordures par défaut */
+   }
+
+   .subcategory-hover:hover {
+       color: hwb(32 7% 3% / 0.952);
+   }
+
+   .product-details {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       margin-top: 1rem;
+   }
+
+   .product-info {
+       display: flex;
+       flex-direction: column;
+       align-items: flex-start;
+       margin-left: 1rem;
+   }
+
+   .small-images {
+       display: flex;
+       justify-content: space-between;
+       margin-top: 1rem;
+   }
+
+   .small-images img {
+       width: 40%;
+       height: auto;
+   }
+
+   .main-image {
+       width: 100%;
+       height: auto;
+   }
+
+   .product-container {
+       display: flex;
+       align-items: center;
+   }
+
+   
+   .zoom-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .zoom-lens {
+            position: absolute;
+            border: 1px solid #d4d4d4;
+            width: 100px;
+            height: 100px;
+            display: none;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: crosshair;
+        }
+
+        .zoom-result {
+            position: absolute;
+            border: 1px solid #d4d4d4;
+            width: 300px;
+            height: 300px;
+            display: none;
+            background-color: white;
+            z-index: 10;
+            right: 10px;
+            top: 10px;
+        }
+</style>
+
+
+
+<div class="container">
+   <div class="row">
+      <h2 style="text-align: center;color: hwb(32 7% 3% / 0.952) ; font-style: italic;">Informations sur le produit</h2>
+       <!-- Premier div -->
+       <div class="col-md-5" >
+           <div class="first-div" >
+               <!-- Contenu du premier div -->
+               <div class="col-md-8 mb-4">
+                  <div class="card card-product">
+                      <div class="card-body text-center py-8">
+                          <div class="product-container">
+                              <div class="zoom-container">
+                                  <img id="mainImage" src="images/Robe_droite/Robe1.jpg" alt="Grocery Ecommerce Template" class="main-image img-fluid" />
+                                  <div id="zoomLens" class="zoom-lens"></div>
+                                  <div id="zoomResult" class="zoom-result"></div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="small-images">
+                      <img src="images/Robe_droite/Robe1.jpg" alt="Image 1" data-src="images/Robe_droite/Robe1.jpg" />
+                      <img src="images/Robe_droite/Robe2.jpg" alt="Image 2" data-src="images/Robe_droite/Robe2.jpg" />
+                      <img src="images/Robe_droite/Robe1.jpg" alt="Image 3" data-src="images/Robe_droite/Robe1.jpg" />
+                  </div>
+              </div>
+           </div>
+       </div>
+       <!-- Deuxième div pour afficher les informations du produit -->
+       <div class="col-md-6">
+           <div class="product-info" >
+               <h2 id="product-name"></h2>
+               <p id="product-category"></p>
+               <p id="product-subcategory"></p>
+               <p id="product-price"></p>
+               <p id="product-description"></p>
+               <p id="product">Taille disponible: L  XL  XXL</p>
+
+              <a href="panier.html" style="text-decoration: none;"> <button id="add-to-cart" class="btn btn-primary">
+                   <img src="images/lorine.jpeg" alt="Panier" class="cart-icon">
+                   Ajouter au panier
+               </button></a>
+           </div>
+       </div>
+   </div>
+</div>
+<style>
+
+   /* Styles pour le premier div */
+/* Styles pour le premier div */
+.first-div {
+    
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    height: 50%; /* Assurez-vous que le div prend toute la hauteur disponible */
+}
+
+/* Styles pour les images centrées */
+.centered-image {
+    max-width: 100%;
+    max-height: 100%;
+    
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Assurez-vous que l'image conserve ses proportions */
+}
+
+/* Styles pour les informations du produit */
+.product-info {
+   
+    margin-left: 15%;
+    padding: 0px;
+    
+    margin-top: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    text-align: left;
+    height: 50%; /* Assurez-vous que le div prend toute la hauteur disponible */
+}
+
+
+.product-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color:  hwb(32 7% 3% / 0.952);
+}
+
+
+
+.product-info button {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding: 10px 20px;
+    border-radius: 15px;
+    background-color:hwb(32 14% 1% / 0.952) ;
+    border: none;
+    color: #100f0f;
+    cursor: pointer;
+}
+
+.product-info button:hover {
+    background-color:hwb(32 5% 22% / 0.952);
+}
+
+.product-info .cart-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    mix-blend-mode: multiply;
+}
+
+/* Media query pour les petits écrans (par exemple, écrans de moins de 768px de large) */
+@media (max-width: 767.98px) {
+    .col-md-6 {
+        margin-top: 0; /* Ajustez cette valeur pour déplacer le div plus haut */
+        position: relative;
+        top: -60px; /* Ajustez cette valeur pour déplacer le div plus haut */
+    }
+}
+
+</style>
+<script>
+   async function fetchProductInfo() {
+    try {
+        const response = await fetch('vetements_robe.json');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        const firstProduct = data[0];
+
+        document.getElementById('product-name').textContent = firstProduct.name;
+        document.getElementById('product-category').textContent = `Catégorie: ${firstProduct.category}`;
+        document.getElementById('product-subcategory').textContent = `Sous-catégorie: ${firstProduct.subcategory}`;
+        document.getElementById('product-price').textContent = `Prix: ${firstProduct.price} F`;
+        document.getElementById('product-description').textContent = firstProduct.description;
+    } catch (error) {
+        console.error('Erreur lors du chargement du fichier JSON:', error);
+    }
+}
+
+// Charger les informations du produit au chargement de la page
+fetchProductInfo();
+
+</script>
+
+
+<script>
+   
+        document.querySelectorAll('.small-images img').forEach(img => {
+            img.addEventListener('click', function() {
+                const mainImage = document.getElementById('mainImage');
+                mainImage.src = this.getAttribute('data-src');
+            });
+        });
+
+        const zoomLens = document.getElementById('zoomLens');
+        const zoomResult = document.getElementById('zoomResult');
+        const mainImage = document.getElementById('mainImage');
+
+        mainImage.addEventListener('mouseenter', function() {
+            zoomLens.style.display = 'block';
+            zoomResult.style.display = 'block';
+        });
+
+        mainImage.addEventListener('mouseleave', function() {
+            zoomLens.style.display = 'none';
+            zoomResult.style.display = 'none';
+        });
+
+        mainImage.addEventListener('mousemove', function(e) {
+            const pos = getCursorPos(e);
+            const x = pos.x - (zoomLens.offsetWidth / 2);
+            const y = pos.y - (zoomLens.offsetHeight / 2);
+
+            if (x > 0 && y > 0 && x < (mainImage.offsetWidth - zoomLens.offsetWidth) && y < (mainImage.offsetHeight - zoomLens.offsetHeight)) {
+                zoomLens.style.left = x + 'px';
+                zoomLens.style.top = y + 'px';
+                zoomResult.style.backgroundImage = `url(${mainImage.src})`;
+                zoomResult.style.backgroundPosition = `-${x * 3}px -${y * 3}px`;
+                zoomResult.style.backgroundSize = `${mainImage.offsetWidth * 3}px ${mainImage.offsetHeight * 3}px`;
+            }
+        });
+
+        function getCursorPos(e) {
+            const a = mainImage.getBoundingClientRect();
+            const x = e.pageX - a.left - window.pageXOffset;
+            const y = e.pageY - a.top - window.pageYOffset;
+            return {x: x, y: y};
+        }
+ </script>
+
+
+
+
+      <div class="container">
+          <div class="col-md-12 mb-2">
+              <div class="col-12 mb-6" style="margin:0px 0;">
+                  <h3 class="mb-0" style="text-align:center;margin-top:-15px; font-style: italic;">Tous les produits simulaires</h3>
+              </div>
+          </div>
+  
+          <div id="productContainer" class="row row-cols-2 row-cols-md-4 g-4"></div>
+          <div id="loader" style="display:none;">Chargement...</div>
+      </div>
+  
+      <script>
+          let currentPage = 1;
+          const itemsPerPage = 20;
+          const productContainer = document.getElementById('productContainer');
+          const loader = document.getElementById('loader');
+          let allProducts = [];
+  
+          async function fetchProducts() {
+              try {
+                  const response = await fetch('Robe.json');
+                  if (!response.ok) {
+                      throw new Error('Network response was not ok');
+                  }
+                  const data = await response.json();
+                  allProducts = data.filter(product => product.category === 'Robe');
+                  displayProducts(allProducts.slice(0, itemsPerPage));
+              } catch (error) {
+                  console.error('Erreur lors du chargement du fichier JSON:', error);
+              }
+          }
+  
+          function displayProducts(products) {
+              productContainer.innerHTML = ''; // Efface les produits existants
+              products.forEach(product => {
+                  const col = document.createElement('div');
+                  col.className = 'col-6 col-md-3'; // Ajustez les classes pour la grille responsive
+  
+                  const card = document.createElement('div');
+                  card.className = 'card card-product';
+                  card.innerHTML = `
+                      <div class="card-body">
+                          <div class="text-center position-relative">
+                              <div class="position-absolute top-0 start-0">
+                                  <span class="badge bg-success">14%</span>
+                              </div>
+                             <a href="page_d_un_produit1.html"> <img src="${product.images[0]}" alt="${product.name}" class="img-fluid mb-2" /></a>
+                              <div class="card-product-action mt-2"></div>
+                          </div>
+                          <div class="text-small mb-1">
+                              <a href="#!" class="text-decoration-none text-muted"><small>${product.name}</small></a>
+                          </div>
+                          <h2 class="fs-6"><a href="page_d_un_produit1.html" class="text-inherit text-decoration-none subcategory-hover">${product.subcategory}</a></h2>
+                          <div class="text-warning">
+                              <small>
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-half"></i>
+                              </small>
+                          </div>
+                          <div class="d-flex justify-content-between align-items-center mt-3">
+                              <div><span class="text-dark">${product.price} F</span></div>
+                              <div>
+                                  <a href="#!" class="btn btn-primary btn-sm">
+                                      <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          width="16"
+                                          height="16"
+                                          viewBox="0 0 24 24"
+                                          fill="none"
+                                          stroke="currentColor"
+                                          stroke-width="2"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          class="feather feather-plus">
+                                          <line x1="12" y1="5" x2="12" y2="19"></line>
+                                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                                      </svg>
+                                      Ajouter
+                                  </a>
+                              </div>
+                          </div>
+                      </div>
+                  `;
+  
+                  col.appendChild(card);
+                  productContainer.appendChild(col);
+              });
+          }
+  
+          let isLoading = false;
+  
+          function loadMoreItems() {
+              if (isLoading) return;
+              isLoading = true;
+              loader.style.display = 'block';
+  
+              setTimeout(() => {
+                  const startIndex = currentPage * itemsPerPage;
+                  const endIndex = startIndex + itemsPerPage;
+                  const newProducts = allProducts.slice(startIndex, endIndex);
+  
+                  if (newProducts.length > 0) {
+                      displayProducts(newProducts);
+                      currentPage++;
+                  } else {
+                      // Désactivez l'écouteur de défilement si plus de produits à charger
+                      window.removeEventListener('scroll', handleScroll);
+                  }
+  
+                  loader.style.display = 'none';
+                  isLoading = false;
+              }, 1000); // Délai de 1000 ms
+          }
+  
+          function handleScroll() {
+              const scrollPosition = window.innerHeight + window.scrollY;
+              const documentHeight = document.documentElement.scrollHeight;
+              if (scrollPosition >= documentHeight - 100) {
+                  loadMoreItems();
+              }
+          }
+  
+          window.addEventListener('scroll', handleScroll);
+  
+          // Charger les premiers éléments
+          fetchProducts();
+      </script>
+  
+      <style>
+          /* Styles pour le conteneur card */
+          .card-product {
+              border: 2px solid transparent; /* Bordure transparente par défaut */
+              transition: border-color 0.3s ease; /* Transition douce pour la couleur de la bordure */
+          }
+  
+          /* Styles pour le conteneur card lorsqu'il est focusé ou survolé */
+          .card-product:focus,
+          .card-product:hover {
+              border-color: black; /* Bordure orange au focus ou au survol */
+              outline: none; /* Désactive les bordures par défaut */
+          }
+  
+          .subcategory-hover:hover {
+              color: hwb(32 7% 3% / 0.952);
+          }
+  
+          /* Ajout de styles pour la grille responsive */
+          .row-cols-2 {
+              display: flex;
+              flex-wrap: wrap;
+          }
+  
+          .row-cols-2 > * {
+              flex: 0 0 50%;
+              max-width: 50%;
+          }
+  
+          .row-cols-md-4 > * {
+              flex: 0 0 25%;
+              max-width: 25%;
+          }
+          .btn-primary {
+    --fc-btn-color: #fff;
+    --fc-btn-bg:#007bff;
+    --fc-btn-border-color:#007bff;
+   }
+   /* Styles pour les petits écrans */
+@media (max-width: 575.98px) {
+    .col-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+      </style>
+  </section>
+ 
+ 
+
+
+
+ 
+
+
+
+</div>
+
+</body>
+
+
+   <!-- FOOTER DE LA PAGE -->
+<footer class="footer" style="background-color: hwb(32 7% 3% / 0.952)">
+   <div class="container">
+     <div class="row g-4 py-4">
+       <div class="col-12 col-md-12 col-lg-4">
+        <h6 class="mb-4">Categories</h6> 
+         <div class="row">
+           <div class="col-6">
+             <!-- list -->
+             <ul class="nav flex-column">
+               <li class="nav-item mb-2"><a href="#!" class="nav-link"></a></li>
+               <li class="nav-item mb-2"><a href="#!" class="nav-link"  style="color: black;"> Vetements femme</a></li>
+               <li class="nav-item mb-2"><a href="#!" class="nav-link"  style="color: black;"> Vetements homme</a></li>
+               <li class="nav-item mb-2"><a href="#!" class="nav-link"  style="color: black;">Vetements enfants</a></li>
+               <li class="nav-item mb-2"><a href="#!" class="nav-link"  style="color: black;">Bijoux</a></li>
+               <li class="nav-item mb-2"><a href="#!" class="nav-link"  style="color: black;">Accesoires</a></li>
+              
+             </ul>
+           </div>
+           
+           <div class="col-6">
+            
+               <!-- list -->
+             <ul class="nav flex-column">
+               <li class="nav-item mb-2"><a href="#!" class="nav-link"  style="color: black;">Kuete nzemtchou</a></li>
+               <li class="nav-item mb-2"><a href="#!" class="nav-link"  style="color: black;"> nzimba aliocha</a></li>
+               <li class="nav-item mb-2"><a href="#!" class="nav-link"  style="color: black;"> kenfack ousmel</a></li>
+               <li class="nav-item mb-2"><a href="#!" class="nav-link"  style="color: black;"> Mve assougmou</a></li>
+             </ul>
+           </div>
+         </div>
+       </div>
+       <div class="col-12 col-md-12 col-lg-8">
+         <div class="row g-4">
+           <div class="col-6 col-sm-6 col-md-3">
+             <h6 class="mb-4">Qui sommes nous?</h6>
+               <!-- list -->
+             <ul class="nav flex-column">
+               <li class="nav-item mb-2"><a href="#!" class="nav-link" style="color: black;">Compagnie</a></li>
+               <li class="nav-item mb-2"><a href="#!" class="nav-link" style="color: black;">A propos</a></li>
+               <li class="nav-item mb-2"><a href="#1" class="nav-link" style="color: black;">Blog</a></li>
+               <li class="nav-item mb-2"><a href="#!" class="nav-link" style="color: black;">Aider</a></li>
+               <li class="nav-item mb-2"><a href="#!" class="nav-link" style="color: black;">Nos principes</a></li>
+             </ul>
+           </div>
+           <div class="col-6 col-sm-6 col-md-3">
+             <h6 class="mb-4">Espace consommateur</h6>
+             <ul class="nav flex-column">
+                   <!-- list -->
+               <li class="nav-item mb-2"><a href="#!" class="nav-link" style="color: black;">Paiments</a></li>
+               <li class="nav-item mb-2"><a href="#!" class="nav-link" style="color: black;">Commandes</a></li>
+               <li class="nav-item mb-2"><a href="#!" class="nav-link" style="color: black;">Livraisons</a></li>
+               <li class="nav-item mb-2"><a href="#!" class="nav-link" style="color: black;">FAQ</a></li>
+               <li class="nav-item mb-2"><a href="../../pages/shop-checkout.html" class="nav-link" style="color: black;">Trouvez une boutique</a></li>
+             </ul>
+           </div>
+           <div class="col-6 col-sm-6 col-md-3">
+             <h6 class="mb-4">Devenir un partenaire</h6>
+             <ul class="nav flex-column">
+                 <!-- list -->
+               <li class="nav-item mb-2"><a href="#!" class="nav-link" style="color: black;">Opportunités</a></li>
+               <li class="nav-item mb-2"><a href="#!" class="nav-link" style="color: black;">Devenir revendeur</a></li>
+               <li class="nav-item mb-2"><a href="#!" class="nav-link" style="color: black;">Besoins</a></li>
+               <li class="nav-item mb-2"><a href="#!" class="nav-link" style="color: black;">Guides & idées</a></li>
+               <li class="nav-item mb-2"><a href="#!" class="nav-link" style="color: black;">Meilleurs assocés</a></li>
+             </ul>
+           </div>
+           <div class="col-6 col-sm-6 col-md-3">
+             <h6 class="mb-4">Univers LUXIMODE</h6>
+             <ul class="nav flex-column">
+                 <!-- list -->
+               <li class="nav-item mb-2"><a href="#!" class="nav-link" style="color: black;">Programmes de formation</a></li>
+               <li class="nav-item mb-2"><a href="#!" class="nav-link" style="color: black;">Bons d'achats</a></li>
+               <li class="nav-item mb-2"><a href="#!" class="nav-link" style="color: black;">Promotions</a></li>
+               <li class="nav-item mb-2"><a href="#!" class="nav-link" style="color: black;">Jeu concours</a></li>
+               <li class="nav-item mb-2"><a href="#!" class="nav-link" style="color: black;">Carrière</a></li>
+             </ul>
+           </div>
+         </div>
+       </div>
+     </div>
+     
+
+     </div>
+     <div class="border-top py-4">
+       <div class="row align-items-center">
+         <div class="col-md-6"><span class="small text-muted">© 2024 <span id="copyright"> -
+           <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+       </span>LUXIMODE Ecommerce.  Tous droits réservés. Auteurs <a href="https://codescandy.com/"></a>.</span></div>
+         <div class="col-md-6">
+           <ul class="list-inline text-md-end mb-0 small mt-3 mt-md-0">
+             <li class="list-inline-item text-muted">Suivez-nous sur</li>
+             <li class="list-inline-item me-1">
+               <a href="#!" class="btn btn-xs btn-social btn-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                   class="bi bi-facebook" viewBox="0 0 16 16">
+                   <path
+                     d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                 </svg></a></li>
+             <li class="list-inline-item me-1">
+               <a href="#!" class="btn btn-xs btn-social btn-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                   class="bi bi-twitter" viewBox="0 0 16 16">
+                   <path
+                     d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                 </svg></a></li>
+             <li class="list-inline-item">
+               <a href="#!" class="btn btn-xs btn-social btn-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                   class="bi bi-instagram" viewBox="0 0 16 16">
+                   <path
+                     d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                 </svg></a></li>
+           </ul>
+         </div>
+       </div>
+
+     </div>
+   </div>
+ </footer>
+ <script src="JS/bootstrap.bundle.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</html>

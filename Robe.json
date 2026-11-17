@@ -1,0 +1,109 @@
+[
+    {
+        "id": 1,
+        "name": "African print fabric",
+        "category": "Robe",
+        "subcategory": "Robe tissu",
+        "price": 18000,
+        "description": "collection de la blanca.",
+        "images": [
+            "images/Robe_droite/robe_droite1.jpg",
+            "images/Robe_tissu4a.jpg",
+            "images/Robe_tissu4b.jpg"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Ankara fabric",
+        "category": "Robe",
+        "subcategory": "Robe tissu",
+        "price": 10000,
+        "description": "collection de la rosette.",
+        "images": [
+            "images/Robe_droite/robe_droite6.jpg",
+            "images/Robe_tissu4a.jpg",
+            "images/Robe_tissu4b.jpg"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Robe élégantia",
+        "category": "Robe",
+        "subcategory": "Robe droite",
+        "price": 13000,
+        "description": "collection de la bel france.",
+        "images": [
+            "images/Robe_droite/robe_droite3.jpg",
+            "images/Robe_droite5a.jpg",
+            "images/Robe_droite5b.jpg"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Robe rouge mini",
+        "category": "Robe",
+        "subcategory": "Robe droite",
+        "price": 13000,
+        "description": "collection de la miniature.",
+        "images": [
+            "images/Robe_droite/robe_droite4.jpg",
+            "images/Image_evase1a.jpg",
+            "images/Image_evase1.jpg"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Robe decoupe sein",
+        "category": "Robe",
+        "subcategory": "Robe droite",
+        "price": 20000,
+        "description": "collection de la rosette.",
+        "images": [
+            "images/Robe_droite/robe_droite5.jpg",
+            "images/Robe_droite5a.jpg",
+            "images/Robe_droite5b.jpg"
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Robe rouge mini",
+        "category": "Robe",
+        "subcategory": "Robe droite",
+        "price": 13000,
+        "description": "collection de la miniature.",
+        "images": [
+            "images/Robe_droite/robe_droite2.jpg",
+            "images/Image_evase1a.jpg",
+            "images/Image_evase1.jpg"
+        ]
+    },
+    {
+     "id": 7,
+        "name": "Robe rouge mini",
+        "category": "Robe",
+        "subcategory": "Robe droite",
+        "price": 13000,
+        "description": "collection de la miniature.",
+        "images": [
+            "images/Robe_droite/robe_droite9.jpg",
+            "images/Image_evase1a.jpg",
+            "images/Image_evase1.jpg"
+        ]
+     
+  },
+  {
+      "id": 8,
+        "name": "Robe rouge mini",
+        "category": "Robe",
+        "subcategory": "Robe droite",
+        "price": 13000,
+        "description": "collection de la miniature.",
+        "images": [
+            "images/Robe_droite/robe_droite8.jpg",
+            "images/Image_evase1a.jpg",
+            "images/Image_evase1.jpg"
+        ]
+     
+  }
+ 
+  ]

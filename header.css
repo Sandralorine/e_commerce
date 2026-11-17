@@ -1,0 +1,120 @@
+.mega-menu-content {
+    width: 100%;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background-color: #ed9715;
+    border-radius: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mega-menu-content .container {
+    max-width: 100%;
+}
+
+.mega-menu-content h5 {
+    margin-bottom: 10px;
+}
+
+.mega-menu-content .dropdown-item {
+    padding: 5px 0;
+}
+
+@media (max-width: 991.98px) {
+    .mega-menu-content {
+        width: auto;
+        padding: 10px;
+    }
+
+    .mega-menu-content .container {
+        max-width: none;
+    }
+
+    .mega-menu-content .row {
+        flex-direction: column;
+    }
+
+    .mega-menu-content .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+footer .bg-light  {
+     width: 300px; /* Ajustez la largeur selon vos besoins */
+        height: 300px; /* Ajustez la hauteur selon vos besoins */
+        background-color: orange;
+        border: 2px solid #000; /* Optionnel : pour ajouter une bordure noire */
+        padding: 10px; /* Optionnel : pour ajouter un peu d'espace interne */
+        box-sizing: border-box; /* Pour inclure le padding et la bordure dans la taille totale */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+}
+
+
+footer .container {
+    max-width: 100%;
+}
+
+footer h5 {
+    margin-bottom: 10px;
+}
+
+footer ul.list-unstyled {
+    padding-left: 0;
+}
+
+footer ul.list-unstyled li {
+    margin-bottom: 5px;
+}
+
+footer ul.list-unstyled li a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+footer ul.list-unstyled li a:hover {
+    text-decoration: underline;
+}
+
+footer .d-flex img {
+    max-width: 50%;
+    height: auto;
+}
+
+footer .d-flex {
+    align-items: center;
+}
+
+footer .d-flex p {
+    margin: 0;
+}
+
+footer .d-flex a {
+    margin-right: 10px;
+}
+
+footer .d-flex a img {
+    max-width: 50%;
+    height: 30;
+}
+
+footer .d-flex a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 991.98px) {
+    footer .row {
+        flex-direction: column;
+    }
+
+    footer .col-md-3 {
+        flex: 0 0 100%;
+        max-width: 50%;
+    }
+
+    footer .d-flex {
+        justify-content: center;
+    }
+}
